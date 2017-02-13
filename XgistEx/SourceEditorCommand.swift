@@ -39,6 +39,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         //Github doesn't recognize the type "objective-c"
         //There's probably a better way to solve this, but this will do for now
         let types = [("objective-c", "m"),
+                     ("com.apple.dt.playground", "playground.swift"),
                      ("swift","swift"),
                      ("xml", "xml")]
         
