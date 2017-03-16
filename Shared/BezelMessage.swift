@@ -17,13 +17,6 @@ extension BezelMessage {
     static let clipboard = BezelMessage(imageName: "copy", title: "Link Copied")
     static let installed = BezelMessage(imageName: "message", title: "Xgist is Installed")
     
-    private var dict: [String: String] {
-        return [
-            "imageName": imageName,
-            "title": title
-        ]
-    }
-    
     var urlEncoded: URL? {
         var components = URLComponents(string: "XgistMessage://message")
         
