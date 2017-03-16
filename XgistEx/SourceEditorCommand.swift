@@ -114,10 +114,22 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             if let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String : Any] {
                 if let htmlURL = json["html_url"] as? String {
                     self.copyToPasteBoard(value: htmlURL)
+                    
+                    self.showSuccessMessage()
+                    
                     completion(nil)
                 }
             }
         }
         task.resume()
     }
+    
+    //MARK: - UI Agent
+    
+    private func showSuccessMessage() {
+        guard let url = BezelMessage.clipboard.urlEncoded else { return }
+        
+        _ = NSWorkspace.shared().open(url)
+    }
+    
 }

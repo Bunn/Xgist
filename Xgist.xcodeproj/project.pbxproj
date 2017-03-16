@@ -14,6 +14,9 @@
 		315CB5071DFC9C590060F611 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315CB5061DFC9C590060F611 /* SourceEditorExtension.swift */; };
 		315CB5091DFC9C590060F611 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315CB5081DFC9C590060F611 /* SourceEditorCommand.swift */; };
 		315CB50D1DFC9C590060F611 /* XgistEx.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 315CB4FF1DFC9C590060F611 /* XgistEx.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DD8F78E41E79F6B200124045 /* BezelMessageWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F78E31E79F6B200124045 /* BezelMessageWindowController.swift */; };
+		DD8F78EA1E79F9BC00124045 /* BezelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F78E91E79F9BC00124045 /* BezelMessage.swift */; };
+		DD8F78EB1E79F9BC00124045 /* BezelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F78E91E79F9BC00124045 /* BezelMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,8 @@
 		315CB5061DFC9C590060F611 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
 		315CB5081DFC9C590060F611 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		315CB50A1DFC9C590060F611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD8F78E31E79F6B200124045 /* BezelMessageWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezelMessageWindowController.swift; sourceTree = "<group>"; };
+		DD8F78E91E79F9BC00124045 /* BezelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezelMessage.swift; path = Shared/BezelMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +81,7 @@
 		315CB4E21DFC9BD30060F611 = {
 			isa = PBXGroup;
 			children = (
+				DD8F78E51E79F96B00124045 /* Shared */,
 				315CB4ED1DFC9BD30060F611 /* Xgist */,
 				315CB5031DFC9C590060F611 /* XgistEx */,
 				315CB5001DFC9C590060F611 /* Frameworks */,
@@ -95,10 +101,9 @@
 		315CB4ED1DFC9BD30060F611 /* Xgist */ = {
 			isa = PBXGroup;
 			children = (
-				315CB4EE1DFC9BD30060F611 /* AppDelegate.swift */,
-				315CB4F01DFC9BD30060F611 /* Assets.xcassets */,
-				315CB4F21DFC9BD30060F611 /* MainMenu.xib */,
-				315CB4F51DFC9BD30060F611 /* Info.plist */,
+				DD8F78E21E79F6A700124045 /* Controllers */,
+				DD8F78E11E79F69100124045 /* Resources */,
+				DD8F78E01E79F68D00124045 /* Bootstrap */,
 			);
 			path = Xgist;
 			sourceTree = "<group>";
@@ -128,6 +133,40 @@
 				315CB5051DFC9C590060F611 /* XgistEx.entitlements */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD8F78E01E79F68D00124045 /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				315CB4EE1DFC9BD30060F611 /* AppDelegate.swift */,
+			);
+			name = Bootstrap;
+			sourceTree = "<group>";
+		};
+		DD8F78E11E79F69100124045 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				315CB4F01DFC9BD30060F611 /* Assets.xcassets */,
+				315CB4F21DFC9BD30060F611 /* MainMenu.xib */,
+				315CB4F51DFC9BD30060F611 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DD8F78E21E79F6A700124045 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DD8F78E31E79F6B200124045 /* BezelMessageWindowController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DD8F78E51E79F96B00124045 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DD8F78E91E79F9BC00124045 /* BezelMessage.swift */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,10 +220,12 @@
 				TargetAttributes = {
 					315CB4EA1DFC9BD30060F611 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 8C7439RJLG;
 						ProvisioningStyle = Automatic;
 					};
 					315CB4FE1DFC9C590060F611 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 8C7439RJLG;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -232,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD8F78EA1E79F9BC00124045 /* BezelMessage.swift in Sources */,
 				315CB4EF1DFC9BD30060F611 /* AppDelegate.swift in Sources */,
+				DD8F78E41E79F6B200124045 /* BezelMessageWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD8F78EB1E79F9BC00124045 /* BezelMessage.swift in Sources */,
 				315CB5071DFC9C590060F611 /* SourceEditorExtension.swift in Sources */,
 				315CB5091DFC9C590060F611 /* SourceEditorCommand.swift in Sources */,
 			);
@@ -364,7 +408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8C7439RJLG;
 				INFOPLIST_FILE = Xgist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.idevziila.Xgist;
@@ -380,7 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8C7439RJLG;
 				INFOPLIST_FILE = Xgist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.idevziila.Xgist;
@@ -395,7 +439,7 @@
 				CODE_SIGN_ENTITLEMENTS = XgistEx/XgistEx.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8C7439RJLG;
 				INFOPLIST_FILE = XgistEx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -412,7 +456,7 @@
 				CODE_SIGN_ENTITLEMENTS = XgistEx/XgistEx.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8C7439RJLG;
 				INFOPLIST_FILE = XgistEx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
