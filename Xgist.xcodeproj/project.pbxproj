@@ -220,12 +220,10 @@
 				TargetAttributes = {
 					315CB4EA1DFC9BD30060F611 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 8C7439RJLG;
 						ProvisioningStyle = Automatic;
 					};
 					315CB4FE1DFC9C590060F611 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 8C7439RJLG;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -408,7 +406,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8C7439RJLG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Xgist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.idevziila.Xgist;
@@ -424,7 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8C7439RJLG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Xgist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.idevziila.Xgist;
@@ -439,7 +437,7 @@
 				CODE_SIGN_ENTITLEMENTS = XgistEx/XgistEx.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8C7439RJLG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = XgistEx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -456,7 +454,7 @@
 				CODE_SIGN_ENTITLEMENTS = XgistEx/XgistEx.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 8C7439RJLG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = XgistEx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
