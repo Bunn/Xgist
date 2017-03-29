@@ -18,6 +18,17 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.2</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>Bezel Message</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>XgistMessage</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>3</string>
 	<key>LSMinimumSystemVersion</key>
@@ -30,16 +41,5 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLName</key>
-            <string>Bezel Message</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>XgistMessage</string>
-            </array>
-        </dict>
-    </array>
 </dict>
 </plist>
