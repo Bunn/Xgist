@@ -20,23 +20,19 @@ struct GitHubAPI {
     
     //MARK: - Variables
     var isAuthenticated: Bool {
-        get {
-            if let _ = token {
-                return true
-            } else {
-                return false
-            }
+        if let _ = token {
+            return true
+        } else {
+            return false
         }
     }
     
     var token: String? {
-        get {
-            do {
-                let password = try Keychain().readPassword()
-                return password
-            } catch {
-                return nil
-            }
+        do {
+            let password = try Keychain().readPassword()
+            return password
+        } catch {
+            return nil
         }
     }
     
