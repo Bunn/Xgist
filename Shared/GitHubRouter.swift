@@ -19,7 +19,7 @@ enum GitHubRouter {
     var path: String {
         switch self {
         case .auth:
-            return "authorizations/clients/\(GitHubCredential.clientID.rawValue)/wololo" //needs to return unique hash instead of "wololo"
+            return "authorizations/clients/\(GitHubCredential.clientID.rawValue)/\(UUID.init())"
         case .gists:
             return "gists"
         }

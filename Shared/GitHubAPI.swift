@@ -1,5 +1,3 @@
-
-import Foundation
 //
 //  GitHubAPI.swift
 //  Xgist
@@ -8,8 +6,50 @@ import Foundation
 //  Copyright © 2017 Fernando Bunn. All rights reserved.
 //
 
-struct GitHubAPI {
+import Foundation
 
+struct GitHubAPI {
+    
+    enum GitHubAPIError: Error {
+        case badHHTPStatus
+        case invalidRequest
+        case invalidJSON
+        case tokenNotFound
+    }
+    
+    
+    //MARK: - Variables
+    var isAuthenticated: Bool {
+        get {
+            if let _ = token {
+                return true
+            } else {
+                return false
+            }
+        }
+    }
+    
+    var token: String? {
+        get {
+            do {
+                let password = try Keychain().readPassword()
+                return password
+            } catch {
+                return nil
+            }
+        }
+    }
+    
+    //MARK: - Public Functions
+    
+    func logout() {
+        do {
+            try Keychain().deleteItem()
+        } catch {
+            fatalError("Error deleting keychain item - \(error)")
+        }
+    }
+    
     func post(gist: String, fileExtension: String, completion: @escaping (Error?, String?) -> Void) {
         var file = [String : Any]()
         file["content"] = gist
@@ -28,11 +68,11 @@ struct GitHubAPI {
         jsonDictionary["files"] = files
         
         guard let request = GitHubRouter.gists(jsonDictionary).request else {
-            completion(NSError(domain: "Invalid Request", code: -666, userInfo: nil), nil)
+            completion(GitHubAPIError.invalidRequest, nil)
             return
         }
-        //Setup Session
         
+        //Setup Session
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data, error == nil else {
                 completion(error, nil)
@@ -40,7 +80,7 @@ struct GitHubAPI {
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 201 {
-                completion(NSError(domain: "Wrong HHTP status", code: httpStatus.statusCode, userInfo: nil), nil)
+                completion(GitHubAPIError.badHHTPStatus, nil)
                 return
             }
             
@@ -54,48 +94,55 @@ struct GitHubAPI {
         task.resume()
     }
     
-    
-    
-    /**
-    //Not implemented yet
-    
-    func base64Login() -> String {
-        let username = "XXX"
-        let password = "XXX"
-        let loginString = "\(username):\(password)"
-        let loginData = loginString.data(using: String.Encoding.utf8)!
-        let base64LoginString = loginData.base64EncodedString()
-        
-        return base64LoginString
-    }
-    
-    
-    func authenticate () {
+    func authenticate (username: String, password: String, completion: @escaping (Error?) -> Void) {
         let scopes = ["gist"]
         let params  = ["client_secret" : GitHubCredential.clientSecret.rawValue,
                        "scopes" : scopes,
                        "note" : "testNote"] as [String : Any]
         
-        var request = GitHubRouter.auth(params).request
-        request.setValue("Basic \(base64Login())", forHTTPHeaderField: "Authorization")
+        guard var request = GitHubRouter.auth(params).request else {
+            completion(GitHubAPIError.invalidRequest)
+            return
+            
+        }
+        let loginData = base64Login(username: username, password: password)
+        request.setValue("Basic \(loginData)", forHTTPHeaderField: "Authorization")
         
-
         //Setup Session
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let responseData = data,
-                error == nil,
+            guard let responseData = data, error == nil,
                 let jsonObject = try? JSONSerialization.jsonObject(with: responseData, options: []) else {
-                    print("Error \(String(describing: error))")
+                    completion(error)
                     return
             }
             
-            if let json = jsonObject as? [String : Any] {
-                print(json)
+            guard let json = jsonObject as? [String : Any] else {
+                completion(GitHubAPIError.invalidJSON)
+                return
+            }
+            
+            guard let token = json["token"] as? String else {
+                completion(GitHubAPIError.tokenNotFound)
+                return
+            }
+            
+            do {
+                try Keychain().savePassword(token)
+                completion(nil)
+            } catch {
+                completion(error)
             }
         }
-        
         task.resume()
-        
     }
-**/
+    
+    
+    //MARK: - Private Functions
+    
+    fileprivate func base64Login(username: String, password: String) -> String {
+        let loginString = "\(username):\(password)"
+        let loginData = loginString.data(using: String.Encoding.utf8)!
+        let base64LoginString = loginData.base64EncodedString()
+        return base64LoginString
+    }
 }

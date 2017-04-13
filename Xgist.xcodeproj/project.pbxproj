@@ -14,6 +14,8 @@
 		315CB5071DFC9C590060F611 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315CB5061DFC9C590060F611 /* SourceEditorExtension.swift */; };
 		315CB5091DFC9C590060F611 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315CB5081DFC9C590060F611 /* SourceEditorCommand.swift */; };
 		315CB50D1DFC9C590060F611 /* XgistEx.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 315CB4FF1DFC9C590060F611 /* XgistEx.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		31A0C6AD1E9D9A450059B814 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A0C6AC1E9D9A450059B814 /* Keychain.swift */; };
+		31A0C6AE1E9DA0210059B814 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A0C6AC1E9D9A450059B814 /* Keychain.swift */; };
 		31A99D181E8B47350021D6F5 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A99D151E8B47350021D6F5 /* GitHubAPI.swift */; };
 		31A99D191E8B47350021D6F5 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A99D151E8B47350021D6F5 /* GitHubAPI.swift */; };
 		31A99D1A1E8B47350021D6F5 /* GitHubCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A99D161E8B47350021D6F5 /* GitHubCredential.swift */; };
@@ -61,6 +63,8 @@
 		315CB5061DFC9C590060F611 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
 		315CB5081DFC9C590060F611 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		315CB50A1DFC9C590060F611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31A0C6AB1E9D99D40059B814 /* Xgist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Xgist.entitlements; sourceTree = "<group>"; };
+		31A0C6AC1E9D9A450059B814 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		31A99D151E8B47350021D6F5 /* GitHubAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubAPI.swift; path = Shared/GitHubAPI.swift; sourceTree = "<group>"; };
 		31A99D161E8B47350021D6F5 /* GitHubCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubCredential.swift; path = Shared/GitHubCredential.swift; sourceTree = "<group>"; };
 		31A99D171E8B47350021D6F5 /* GitHubRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubRouter.swift; path = Shared/GitHubRouter.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		315CB4ED1DFC9BD30060F611 /* Xgist */ = {
 			isa = PBXGroup;
 			children = (
+				31A0C6AB1E9D99D40059B814 /* Xgist.entitlements */,
 				DD8F78E21E79F6A700124045 /* Controllers */,
 				DD8F78E11E79F69100124045 /* Resources */,
 				DD8F78E01E79F68D00124045 /* Bootstrap */,
@@ -185,6 +190,7 @@
 			children = (
 				31CA8EF21E8A018900D6F11E /* GitHub */,
 				DD8F78E91E79F9BC00124045 /* BezelMessage.swift */,
+				31A0C6AC1E9D9A450059B814 /* Keychain.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -242,11 +248,21 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = DNXBQ46VRB;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					315CB4FE1DFC9C590060F611 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = DNXBQ46VRB;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -299,6 +315,7 @@
 				31A99D1A1E8B47350021D6F5 /* GitHubCredential.swift in Sources */,
 				31A99D181E8B47350021D6F5 /* GitHubAPI.swift in Sources */,
 				31A99D1C1E8B47350021D6F5 /* GitHubRouter.swift in Sources */,
+				31A0C6AD1E9D9A450059B814 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +329,7 @@
 				31A99D1B1E8B47350021D6F5 /* GitHubCredential.swift in Sources */,
 				31A99D191E8B47350021D6F5 /* GitHubAPI.swift in Sources */,
 				31A99D1D1E8B47350021D6F5 /* GitHubRouter.swift in Sources */,
+				31A0C6AE1E9DA0210059B814 /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +452,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Xgist/Xgist.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = DNXBQ46VRB;
@@ -450,6 +469,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Xgist/Xgist.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = DNXBQ46VRB;
