@@ -10,8 +10,7 @@ import Foundation
 
 enum GitHubRouter {
     case auth([String : Any])
-    case anonymousGist([String : Any])
-    case authenticatedGist([String : Any])
+    case gist([String : Any], Bool)
 
     var basePath: String {
         return "https://api.github.com"
@@ -21,11 +20,13 @@ enum GitHubRouter {
         switch self {
         case .auth:
             return "authorizations/clients/\(GitHubCredential.clientID.rawValue)/\(UUID.init())"
-        case .anonymousGist:
-            return "gists"
-        case .authenticatedGist:
-            guard let token = GitHubAPI().token else { fatalError("No Token") }
-            return "gists?access_token=\(token)"
+        case .gist( _ , let authenticated):
+            if authenticated {
+                guard let token = GitHubAPI().token else { fatalError("No Token") }
+                return "gists?access_token=\(token)"
+            } else {
+                return "gists"
+            }
         }
     }
     
@@ -33,14 +34,14 @@ enum GitHubRouter {
         switch self {
         case .auth:
             return "PUT"
-        case .anonymousGist, .authenticatedGist:
+        case .gist:
             return "POST"
         }
     }
     
     var httpBody: Data? {
         switch self {
-        case .auth(let params), .anonymousGist(let params), .authenticatedGist(let params):
+        case .auth(let params), .gist(let params, _):
             let jsonData = try? JSONSerialization.data(withJSONObject: params)
             return jsonData
         }

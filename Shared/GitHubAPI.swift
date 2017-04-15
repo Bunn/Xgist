@@ -64,20 +64,9 @@ struct GitHubAPI {
         jsonDictionary["public"] = false
         jsonDictionary["files"] = files
         
-        var request: URLRequest
-        
-        if authenticated {
-            guard let authRequest = GitHubRouter.authenticatedGist(jsonDictionary).request else {
-                completion(GitHubAPIError.invalidRequest, nil)
-                return
-            }
-            request = authRequest
-        } else {
-            guard let anonymousRequest = GitHubRouter.anonymousGist(jsonDictionary).request else {
-                completion(GitHubAPIError.invalidRequest, nil)
-                return
-            }
-            request = anonymousRequest
+        guard let request = GitHubRouter.gist(jsonDictionary, authenticated).request else {
+            completion(GitHubAPIError.invalidRequest, nil)
+            return
         }
         
         //Setup Session
