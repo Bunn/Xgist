@@ -20,7 +20,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             return
         }
         
-        gitHubAPI.post(gist: textContent, fileExtension: invocation.codeType) { (error, result) in
+        gitHubAPI.post(gist: textContent, fileExtension: invocation.codeType, authenticated: invocation.authenticated) { (error, result) in
             if let content = result {
                 self.copyToPasteBoard(value: content)
                 self.showSuccessMessage()
@@ -28,7 +28,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             completionHandler(error)
         }
     }
-
+    
     private func copyToPasteBoard(value: String) -> Void {
         let pasteboard = NSPasteboard.general()
         pasteboard.declareTypes([NSPasteboardTypeString], owner: nil)
@@ -47,8 +47,12 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
 fileprivate extension XCSourceEditorCommandInvocation {
     
     enum CommandType: String {
-        case selection = "SourceEditorCommandFromSelection"
-        case file = "SourceEditorCommandFromFile"
+        case anonymous = "SourceEditorCommandAnonymous"
+        case authenticated = "SourceEditorCommandAuthenticated"
+    }
+    
+    var authenticated: Bool {
+        return commandType == CommandType.authenticated
     }
     
     private func getTextSelectionFrom(buffer: XCSourceTextBuffer) -> String {
@@ -67,13 +71,16 @@ fileprivate extension XCSourceEditorCommandInvocation {
         return text
     }
     
-    var content: String? {
-        if commandIdentifier.contains(CommandType.selection.rawValue) {
-            return getTextSelectionFrom(buffer: buffer)
-        } else if commandIdentifier.contains(CommandType.file.rawValue) {
-            return buffer.completeBuffer
+    var commandType: CommandType {
+        if commandIdentifier.contains(CommandType.authenticated.rawValue) {
+            return .authenticated
+        } else {
+            return .anonymous
         }
-        return nil
+    }
+    
+    var content: String? {
+        return getTextSelectionFrom(buffer: buffer)
     }
     
     var codeType: String {

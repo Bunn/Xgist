@@ -36,6 +36,7 @@ struct GitHubAPI {
         }
     }
     
+    
     //MARK: - Public Functions
     
     func logout() {
@@ -46,7 +47,7 @@ struct GitHubAPI {
         }
     }
     
-    func post(gist: String, fileExtension: String, completion: @escaping (Error?, String?) -> Void) {
+    func post(gist: String, fileExtension: String, authenticated: Bool, completion: @escaping (Error?, String?) -> Void) {
         var file = [String : Any]()
         file["content"] = gist
         
@@ -63,9 +64,20 @@ struct GitHubAPI {
         jsonDictionary["public"] = false
         jsonDictionary["files"] = files
         
-        guard let request = GitHubRouter.gists(jsonDictionary).request else {
-            completion(GitHubAPIError.invalidRequest, nil)
-            return
+        var request: URLRequest
+        
+        if authenticated {
+            guard let authRequest = GitHubRouter.authenticatedGist(jsonDictionary).request else {
+                completion(GitHubAPIError.invalidRequest, nil)
+                return
+            }
+            request = authRequest
+        } else {
+            guard let anonymousRequest = GitHubRouter.anonymousGist(jsonDictionary).request else {
+                completion(GitHubAPIError.invalidRequest, nil)
+                return
+            }
+            request = anonymousRequest
         }
         
         //Setup Session
