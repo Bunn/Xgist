@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		315CB4EF1DFC9BD30060F611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315CB4EE1DFC9BD30060F611 /* AppDelegate.swift */; };
 		315CB4F11DFC9BD30060F611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 315CB4F01DFC9BD30060F611 /* Assets.xcassets */; };
-		315CB4F41DFC9BD30060F611 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315CB4F21DFC9BD30060F611 /* MainMenu.xib */; };
 		315CB5021DFC9C590060F611 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315CB5011DFC9C590060F611 /* Cocoa.framework */; };
 		315CB5071DFC9C590060F611 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315CB5061DFC9C590060F611 /* SourceEditorExtension.swift */; };
 		315CB5091DFC9C590060F611 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315CB5081DFC9C590060F611 /* SourceEditorCommand.swift */; };
@@ -22,6 +21,9 @@
 		31A99D1B1E8B47350021D6F5 /* GitHubCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A99D161E8B47350021D6F5 /* GitHubCredential.swift */; };
 		31A99D1C1E8B47350021D6F5 /* GitHubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A99D171E8B47350021D6F5 /* GitHubRouter.swift */; };
 		31A99D1D1E8B47350021D6F5 /* GitHubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A99D171E8B47350021D6F5 /* GitHubRouter.swift */; };
+		31CF2DCC1EC34E8C005B0EFA /* TwoFactorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF2DCB1EC34E8C005B0EFA /* TwoFactorViewController.swift */; };
+		31E20B801EB95B3000BC2338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E20B7F1EB95B3000BC2338 /* Main.storyboard */; };
+		31E20B821EB95C0B00BC2338 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E20B811EB95C0B00BC2338 /* LoginViewController.swift */; };
 		DD8F78E41E79F6B200124045 /* BezelMessageWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F78E31E79F6B200124045 /* BezelMessageWindowController.swift */; };
 		DD8F78EA1E79F9BC00124045 /* BezelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F78E91E79F9BC00124045 /* BezelMessage.swift */; };
 		DD8F78EB1E79F9BC00124045 /* BezelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F78E91E79F9BC00124045 /* BezelMessage.swift */; };
@@ -55,7 +57,6 @@
 		315CB4EB1DFC9BD30060F611 /* Xgist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xgist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		315CB4EE1DFC9BD30060F611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		315CB4F01DFC9BD30060F611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		315CB4F31DFC9BD30060F611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		315CB4F51DFC9BD30060F611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		315CB4FF1DFC9C590060F611 /* XgistEx.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = XgistEx.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		315CB5011DFC9C590060F611 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -68,6 +69,9 @@
 		31A99D151E8B47350021D6F5 /* GitHubAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubAPI.swift; path = Shared/GitHubAPI.swift; sourceTree = "<group>"; };
 		31A99D161E8B47350021D6F5 /* GitHubCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubCredential.swift; path = Shared/GitHubCredential.swift; sourceTree = "<group>"; };
 		31A99D171E8B47350021D6F5 /* GitHubRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubRouter.swift; path = Shared/GitHubRouter.swift; sourceTree = "<group>"; };
+		31CF2DCB1EC34E8C005B0EFA /* TwoFactorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoFactorViewController.swift; sourceTree = "<group>"; };
+		31E20B7F1EB95B3000BC2338 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		31E20B811EB95C0B00BC2338 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD8F78E31E79F6B200124045 /* BezelMessageWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezelMessageWindowController.swift; sourceTree = "<group>"; };
 		DD8F78E91E79F9BC00124045 /* BezelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezelMessage.swift; path = Shared/BezelMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,8 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				315CB4F01DFC9BD30060F611 /* Assets.xcassets */,
-				315CB4F21DFC9BD30060F611 /* MainMenu.xib */,
 				315CB4F51DFC9BD30060F611 /* Info.plist */,
+				31E20B7F1EB95B3000BC2338 /* Main.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -181,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				DD8F78E31E79F6B200124045 /* BezelMessageWindowController.swift */,
+				31E20B811EB95C0B00BC2338 /* LoginViewController.swift */,
+				31CF2DCB1EC34E8C005B0EFA /* TwoFactorViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -290,8 +296,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31E20B801EB95B3000BC2338 /* Main.storyboard in Resources */,
 				315CB4F11DFC9BD30060F611 /* Assets.xcassets in Resources */,
-				315CB4F41DFC9BD30060F611 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,9 +316,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD8F78EA1E79F9BC00124045 /* BezelMessage.swift in Sources */,
+				31CF2DCC1EC34E8C005B0EFA /* TwoFactorViewController.swift in Sources */,
 				315CB4EF1DFC9BD30060F611 /* AppDelegate.swift in Sources */,
 				DD8F78E41E79F6B200124045 /* BezelMessageWindowController.swift in Sources */,
 				31A99D1A1E8B47350021D6F5 /* GitHubCredential.swift in Sources */,
+				31E20B821EB95C0B00BC2338 /* LoginViewController.swift in Sources */,
 				31A99D181E8B47350021D6F5 /* GitHubAPI.swift in Sources */,
 				31A99D1C1E8B47350021D6F5 /* GitHubRouter.swift in Sources */,
 				31A0C6AD1E9D9A450059B814 /* Keychain.swift in Sources */,
@@ -342,17 +350,6 @@
 			targetProxy = 315CB50B1DFC9C590060F611 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		315CB4F21DFC9BD30060F611 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				315CB4F31DFC9BD30060F611 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		315CB4F61DFC9BD30060F611 /* Debug */ = {
