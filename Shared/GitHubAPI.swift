@@ -9,12 +9,14 @@
 import Foundation
 
 struct GitHubAPI {
+    let twoFactorHeader = "X-GitHub-OTP"
     
     enum GitHubAPIError: Error {
         case badHHTPStatus
         case invalidRequest
         case invalidJSON
         case tokenNotFound
+        case twoFactorRequired
     }
     
     
@@ -91,7 +93,7 @@ struct GitHubAPI {
         task.resume()
     }
     
-    func authenticate (username: String, password: String, completion: @escaping (Error?) -> Void) {
+    func authenticate (username: String, password: String, twoFactorCode: String? = nil, completion: @escaping (Error?) -> Void) {
         let scopes = ["gist"]
         let params  = ["client_secret" : GitHubCredential.clientSecret.rawValue,
                        "scopes" : scopes,
@@ -101,6 +103,9 @@ struct GitHubAPI {
             completion(GitHubAPIError.invalidRequest)
             return
             
+        }
+        if let code = twoFactorCode {
+            request.setValue(code, forHTTPHeaderField: twoFactorHeader)
         }
         let loginData = base64Login(username: username, password: password)
         request.setValue("Basic \(loginData)", forHTTPHeaderField: "Authorization")
@@ -115,6 +120,16 @@ struct GitHubAPI {
             
             guard let json = jsonObject as? [String : Any] else {
                 completion(GitHubAPIError.invalidJSON)
+                return
+            }
+            
+            guard let httpStatus = response as? HTTPURLResponse else {
+                completion(GitHubAPIError.invalidRequest)
+                return
+            }
+            
+            guard httpStatus.allHeaderFields[self.twoFactorHeader] == nil else {
+                completion(GitHubAPIError.twoFactorRequired)
                 return
             }
             

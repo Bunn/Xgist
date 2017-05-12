@@ -66,13 +66,20 @@ class LoginViewController: NSViewController {
         headerText.textColor = NSColor.red
     }
     
-    private func authenticate() {
+    fileprivate func authenticate(twoFactorCode: String? = nil) {
         showSpinner(show: true)
-        githubAPI.authenticate(username: usernameTextField.stringValue, password: passwordTextField.stringValue) { (error: Error?) in
+        githubAPI.authenticate(username: usernameTextField.stringValue, password: passwordTextField.stringValue, twoFactorCode: twoFactorCode) { (error: Error?) in
             print("Error \(String(describing: error))")
-            
             DispatchQueue.main.async {
                 if error != nil {
+                    if let apiError = error as? GitHubAPI.GitHubAPIError {
+                        switch apiError {
+                        case .twoFactorRequired:
+                            self.openTwoFactorController()
+                            return
+                        default: break
+                        }
+                    }
                     self.displayError(message: "Bad username or password")
                 } else {
                     UserDefaults.standard.set(self.usernameTextField.stringValue, forKey: DefaultKeys.username.rawValue)
@@ -118,6 +125,6 @@ class LoginViewController: NSViewController {
 extension LoginViewController: TwoFactorViewControllerDelegate {
     func didEnter(code: String, controller: TwoFactorViewController) {
         dismissViewController(controller)
-        print("CODE \(code)")
+        authenticate(twoFactorCode: code)
     }
 }
