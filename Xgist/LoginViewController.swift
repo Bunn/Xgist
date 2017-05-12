@@ -102,10 +102,6 @@ class LoginViewController: NSViewController {
         performSegue(withIdentifier: SegueIdentifier.twoFactorAuthenticate.rawValue, sender: nil)
     }
     
-    @IBAction func testButtonClicked(_ sender: Any) {
-        openTwoFactorController()
-    }
-    
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         guard let segueIdentifier = segue.identifier else { return }
         

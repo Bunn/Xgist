@@ -94,17 +94,6 @@
                             <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="EZu-cB-Bua">
                                 <rect key="frame" x="387" y="23" width="16" height="16"/>
                             </progressIndicator>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dP1-lD-wyz">
-                                <rect key="frame" x="261" y="11" width="81" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="D16-DQ-Rez">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="testButtonClicked:" target="A6L-vB-gbt" id="dWK-Zn-7xI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="vBs-Nz-0Or" firstAttribute="leading" secondItem="ysl-kk-3Nm" secondAttribute="trailing" constant="8" id="2h3-Gh-VcK"/>
