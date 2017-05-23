@@ -18,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var didOpenURL = false
     
     func applicationWillFinishLaunching(_ notification: Notification) {
+        NSApp.setActivationPolicy(.prohibited)
+        
         NSAppleEventManager.shared().setEventHandler(self,
                                                      andSelector: #selector(handleURLEvent(_:replyEvent:)),
                                                      forEventClass: UInt32(kInternetEventClass),
@@ -27,7 +29,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             if !self.didOpenURL {
-                self.showBezelMessage(.installed)
+                // Application was launched normally, just show
+                NSApp.setActivationPolicy(.regular)
+                NSApp.activate(ignoringOtherApps: true)
             }
         }
     }

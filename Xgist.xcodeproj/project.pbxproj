@@ -22,8 +22,8 @@
 		31A99D1C1E8B47350021D6F5 /* GitHubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A99D171E8B47350021D6F5 /* GitHubRouter.swift */; };
 		31A99D1D1E8B47350021D6F5 /* GitHubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A99D171E8B47350021D6F5 /* GitHubRouter.swift */; };
 		31CF2DCC1EC34E8C005B0EFA /* TwoFactorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF2DCB1EC34E8C005B0EFA /* TwoFactorViewController.swift */; };
-		31E20B801EB95B3000BC2338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E20B7F1EB95B3000BC2338 /* Main.storyboard */; };
 		31E20B821EB95C0B00BC2338 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E20B811EB95C0B00BC2338 /* LoginViewController.swift */; };
+		DD8619641ED3B27B005BF20A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8619631ED3B27B005BF20A /* Main.storyboard */; };
 		DD8F78E41E79F6B200124045 /* BezelMessageWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F78E31E79F6B200124045 /* BezelMessageWindowController.swift */; };
 		DD8F78EA1E79F9BC00124045 /* BezelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F78E91E79F9BC00124045 /* BezelMessage.swift */; };
 		DD8F78EB1E79F9BC00124045 /* BezelMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F78E91E79F9BC00124045 /* BezelMessage.swift */; };
@@ -70,8 +70,8 @@
 		31A99D161E8B47350021D6F5 /* GitHubCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubCredential.swift; path = Shared/GitHubCredential.swift; sourceTree = "<group>"; };
 		31A99D171E8B47350021D6F5 /* GitHubRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubRouter.swift; path = Shared/GitHubRouter.swift; sourceTree = "<group>"; };
 		31CF2DCB1EC34E8C005B0EFA /* TwoFactorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoFactorViewController.swift; sourceTree = "<group>"; };
-		31E20B7F1EB95B3000BC2338 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		31E20B811EB95C0B00BC2338 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DD8619631ED3B27B005BF20A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DD8F78E31E79F6B200124045 /* BezelMessageWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezelMessageWindowController.swift; sourceTree = "<group>"; };
 		DD8F78E91E79F9BC00124045 /* BezelMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BezelMessage.swift; path = Shared/BezelMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,7 +176,7 @@
 			children = (
 				315CB4F01DFC9BD30060F611 /* Assets.xcassets */,
 				315CB4F51DFC9BD30060F611 /* Info.plist */,
-				31E20B7F1EB95B3000BC2338 /* Main.storyboard */,
+				DD8619631ED3B27B005BF20A /* Main.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 				TargetAttributes = {
 					315CB4EA1DFC9BD30060F611 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = DNXBQ46VRB;
+						DevelopmentTeam = 8C7439RJLG;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -262,7 +262,7 @@
 					};
 					315CB4FE1DFC9C590060F611 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = DNXBQ46VRB;
+						DevelopmentTeam = 8C7439RJLG;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -296,7 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E20B801EB95B3000BC2338 /* Main.storyboard in Resources */,
+				DD8619641ED3B27B005BF20A /* Main.storyboard in Resources */,
 				315CB4F11DFC9BD30060F611 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,10 +452,10 @@
 				CODE_SIGN_ENTITLEMENTS = Xgist/Xgist.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = DNXBQ46VRB;
+				DEVELOPMENT_TEAM = 8C7439RJLG;
 				INFOPLIST_FILE = Xgist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.idevzilla.Xgist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idevzilla.Xgist.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -469,10 +469,10 @@
 				CODE_SIGN_ENTITLEMENTS = Xgist/Xgist.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = DNXBQ46VRB;
+				DEVELOPMENT_TEAM = 8C7439RJLG;
 				INFOPLIST_FILE = Xgist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.idevzilla.Xgist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idevzilla.Xgist.release;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -484,11 +484,11 @@
 				CODE_SIGN_ENTITLEMENTS = XgistEx/XgistEx.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = DNXBQ46VRB;
+				DEVELOPMENT_TEAM = 8C7439RJLG;
 				INFOPLIST_FILE = XgistEx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.idevzilla.Xgist.XgistEx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idevzilla.Xgist.release.XgistEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -501,11 +501,11 @@
 				CODE_SIGN_ENTITLEMENTS = XgistEx/XgistEx.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = DNXBQ46VRB;
+				DEVELOPMENT_TEAM = 8C7439RJLG;
 				INFOPLIST_FILE = XgistEx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.idevzilla.Xgist.XgistEx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idevzilla.Xgist.release.XgistEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
