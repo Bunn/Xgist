@@ -1,17 +1,36 @@
 # Xgist
 Xgist is a Xcode extension to send code to GitHub's Gist.
-The extension will send your selection or entire file to Gist and automatically copy the Gist URL into your Clipboard. 
+The extension will send your code selection to Gist and automatically copy the Gist URL into your Clipboard. 
 
 Be aware that it will replace your current clipboard with the Gist URL!
 
-[Youtube demo video] (https://youtu.be/LtyPq-bzjM0)
+# Authentication (Optional)
+By default Xgist will post your gists as anonymous, but once you open the .app you'll see a login form where you can login to your GitHub account and post authenticated gists.
 
-![screenshot](./other/file_selection.jpg)
+![screenshot](./other/login.png)
+
+After you login you'll need to restart Xcode so it will give you the authenticated gist option
+
+![screenshot](./other/menuOptions.png)
+
+Note that Xcode might ask to use your keychain since that's how your GitHub access token is stored.
+
+![screenshot](./other/keychain.png)
+
+
+[Youtube demo video] (https://youtu.be/LtyPq-bzjM0)
 
 ![screenshot](./other/demo.gif)
 
 
 # Installation
+
+# Easy way
+Thanks to [Rambo](https://twitter.com/_inside) you can download a signed version of the app [here](https://github.com/Bunn/Xgist/releases/latest):
+
+
+# Manual way
+*Note that by choosing this way you'll need to create your own GitHub app and add your app ID and Secret into the `GitHubCredential.swift` file*
 
 1. Clone the repo and open ``Xgist.xcodeproj``;
 2. Enable target signing for both the Application and the Source Code Extension using your own developer ID;
