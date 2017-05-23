@@ -18,7 +18,7 @@ Note that Xcode might ask to use your keychain since that's how your GitHub acce
 ![screenshot](./other/keychain.png)
 
 
-[Youtube demo video] (https://youtu.be/LtyPq-bzjM0)
+[Youtube demo video](https://youtu.be/LtyPq-bzjM0)
 
 ![screenshot](./other/demo.gif)
 
