@@ -28,6 +28,12 @@ Note that Xcode might ask to use your keychain since that's how your GitHub acce
 # Easy way
 Thanks to [Rambo](https://twitter.com/_inside) you can download a signed version of the app [here](https://github.com/Bunn/Xgist/releases/latest):
 
+After opening it, you might need to go to the system preferences app and enable Xgist plugin.
+
+![screenshot](./other/preferences.png)
+![screenshot](./other/xgist_pref.png)
+
+
 
 # Manual way
 *Note that by choosing this way you'll need to create your own GitHub app and add your app ID and Secret into the `GitHubCredential.swift` file*
