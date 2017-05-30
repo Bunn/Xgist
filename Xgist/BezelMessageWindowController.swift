@@ -65,13 +65,25 @@ final class BezelMessageWindowController: NSWindowController {
         window.setFrame(adjustedRect, display: false)
     }
     
+    private var backgroundMaterial: NSVisualEffectMaterial {
+        guard let systemTheme = UserDefaults.standard.object(forKey: "AppleInterfaceStyle") as? String else { return .mediumLight }
+        
+        return (systemTheme == "Dark") ? .dark : .mediumLight
+    }
+    
+    private var appearance: NSAppearance? {
+        let name = backgroundMaterial == .dark ? NSAppearanceNameVibrantDark : NSAppearanceNameAqua
+        
+        return NSAppearance(named: name)
+    }
+    
     private lazy var vfxView: NSVisualEffectView = {
         let v = NSVisualEffectView(frame: .zero)
         
         v.state = .active
         v.blendingMode = .behindWindow
-        v.material = .dark
-        v.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+        v.material = self.backgroundMaterial
+        v.appearance = self.appearance
         v.maskImage = self.maskImage(with: Metrics.cornerRadius)
         
         return v
@@ -159,6 +171,9 @@ final class BezelMessageWindowController: NSWindowController {
     }
     
     func show(for duration: TimeInterval, completion: (() -> Void)? = nil) {
+        vfxView.material = backgroundMaterial
+        vfxView.appearance = appearance
+        
         guard let window = window else { return }
         
         window.alphaValue = 0

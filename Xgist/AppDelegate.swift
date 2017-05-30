@@ -58,9 +58,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    @objc private func killAgent() {
-        NSApp.terminate(nil)
-    }
-    
 }
 
